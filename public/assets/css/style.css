@@ -1,0 +1,293 @@
+/* Custom styles for Subhalaxmi Teleservice */
+body {
+    background-color: transparent !important;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff !important;
+}
+.navbar-brand span:first-child {
+    color: #e53935 !important; /* Red for Subhalaxmi */
+    font-weight: bold !important;
+}
+body[data-theme="dark"] {
+    background-color: #181a1b !important;
+    color: #f8f9fa;
+}
+body[data-theme="dark"] .navbar {
+    background-color: #23272b !important;
+}
+body[data-theme="dark"] .card {
+    background-color: #23272b;
+    color: #f8f9fa;
+}
+body[data-theme="dark"] .form-control {
+    background-color: #23272b;
+    color: #f8f9fa;
+    border-color: #444;
+}
+body[data-theme="dark"] .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+body[data-theme="dark"] .btn-outline-secondary {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+body[data-theme="dark"] .navbar-nav .nav-link {
+    color: #f8f9fa !important;
+}
+body[data-theme="dark"] .navbar-nav .nav-link.active, 
+body[data-theme="dark"] .navbar-nav .nav-link:focus {
+    color: #1b5e20 !important;
+    background-color: rgba(27,94,32,0.12);
+    border: 1px solid #1b5e20;
+    border-radius: 0.25rem;
+}
+body[data-theme="dark"] .navbar-nav .nav-link:hover {
+    color: #43a047 !important;
+    background-color: rgba(67,160,71,0.08);
+    border: 1px solid #43a047;
+    border-radius: 0.25rem;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:focus {
+    color: #1b5e20 !important;
+    background-color: rgba(27,94,32,0.12);
+    border: 1px solid #1b5e20;
+    border-radius: 0.25rem;
+}
+.navbar-nav .nav-link:hover {
+    color: #43a047 !important;
+    background-color: rgba(67,160,71,0.08);
+    border: 1px solid #43a047;
+    border-radius: 0.25rem;
+}
+#theme-toggle .bi-sun {
+    display: none;
+}
+body[data-theme="dark"] #theme-toggle .bi-moon {
+    display: none;
+}
+body[data-theme="dark"] #theme-toggle .bi-sun {
+    display: inline;
+}
+footer {
+    background: #23272b;
+    color: #f8f9fa;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+footer a {
+    color: #43a047;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Neon glow for Subhalaxmi in hero */
+.subhalaxmi-hero {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 8px #e53935, 0 0 16px #ff1744, 0 0 24px #ff1744;
+}
+.subhalaxmi-hero .neon-glow {
+    position: absolute;
+    left: 0; right: 0; top: 50%; height: 60%;
+    transform: translateY(-50%);
+    z-index: -1;
+    filter: blur(12px);
+    background: radial-gradient(circle, #ff1744 0%, transparent 80%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+.hero-section {
+    background: transparent !important;
+    position: relative;
+    overflow: hidden;
+}
+.waves-container {
+    pointer-events: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    animation: waveMove 1.2s linear infinite alternate;
+}
+.wave2 { animation-delay: 0.24s; }
+.wave3 { animation-delay: 0.48s; }
+.wave4 { animation-delay: 0.72s; }
+.wave5 { animation-delay: 0.96s; }
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-60px) scaleY(1.05); }
+}
+.waves-container svg path {
+    fill: none !important;
+    stroke-width: 4;
+}
+.wave1 path { stroke: #43a047; }
+.wave2 path { stroke: #e53935; }
+.wave3 path { stroke: #007bff; }
+.wave4 path { stroke: #fff; }
+
+@media (max-width: 991.98px) {
+    .hero-section h2 {
+        font-size: 1.2rem !important;
+        letter-spacing: 0.6em !important;
+        word-break: break-all;
+    }
+}
+@media (max-width: 767.98px) {
+    .hero-section h2 {
+        font-size: 1.1rem !important;
+        letter-spacing: 0.4em !important;
+        word-break: break-all;
+    }
+}
+body[data-theme="dark"] .navbar-toggler {
+    background-color: #23272b;
+    border: 1px solid #f8f9fa;
+}
+body[data-theme="dark"] .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248,249,250,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+body[data-theme="dark"] .hero-section h2 {
+    color: #ff9800 !important;
+}
+
+/* Section Heading Color */
+body[data-theme="dark"] .section-heading {
+    color: #ff9800 !important; /* Orange color for dark mode */
+}
+
+/* Force Section Heading Color in Dark Mode */
+body[data-theme="dark"] h2.section-heading {
+    color: #ff9800 !important; /* Force orange color for dark mode */
+}
+
+/* Force Section Heading Color in Dark Mode with Higher Specificity */
+body[data-theme="dark"] h2.section-heading {
+    color: #ff9800 !important; /* Ensure orange color for dark mode */
+}
+
+body[data-theme="dark"] .container h2.section-heading {
+    color: #ff9800 !important; /* Additional specificity */
+}
+
+/* Truck Animation */
+.truck-anim-wrapper {
+    position: relative;
+    animation: truckMove 3s linear infinite;
+}
+
+@keyframes truckMove {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Hover Effect for Cards */
+.choose-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Stat Cards Animation */
+.stat-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: #43a047;
+    font-weight: bold;
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Animated Numbers */
+.animated-number {
+    font-size: 2.5rem;
+    color: #43a047;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+
+/* WhatsApp Icon Animation */
+.whatsapp-icon {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Adjusted WhatsApp Icon Position */
+#whatsapp-chat {
+    bottom: 100px; /* Further adjusted to bring it slightly up */
+}
+
+/* Product Page Styles */
+#product-list .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+#product-list .card:hover {
+    transform: scale(1.05);
+}
+
+/* Cart Modal Styles */
+#cartModal .modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Stock Label Colors */
+.text-success {
+    color: #28a745 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+/* Glass Effect for Product Cards */
+.glass-card {
+    background: rgba(144, 238, 144, 0.2); /* Light green color */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(144, 238, 144, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+}

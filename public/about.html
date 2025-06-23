@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhalaxmi Teleservice - About</title>
+    <link rel="icon" type="image/x-icon" href="assets/image/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .about-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(67, 160, 71, 0.1) 0%, rgba(229, 57, 53, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            z-index: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2343a047' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: patternMove 30s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .feature-card {
+            border: none;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .stat-card {
+            border: none;
+            background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+            color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+            padding: 1.5rem !important;
+        }
+        
+        .stat-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        [data-theme='dark'] .stat-card {
+            background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+            transform: translateX(-100%);
+        }
+
+        .stat-card:hover::after {
+            transform: translateX(100%);
+            transition: transform 0.6s ease;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: rotateY(180deg);
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--bs-body-bg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(67, 160, 71, 0.95), rgba(229, 57, 53, 0.95));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .team-avatar {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .team-avatar {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .team-avatar circle:first-child {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+            100% { filter: brightness(1); }
+        }
+
+        .team-member:hover .team-avatar path,
+        .team-member:hover .team-avatar circle {
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .team-avatar path {
+            transform-origin: center;
+        }
+
+        [data-theme='dark'] .team-avatar circle:nth-child(2),
+        [data-theme='dark'] .team-avatar path:nth-child(3),
+        [data-theme='dark'] .team-avatar path:nth-child(4) {
+            fill: #2a2a2a;
+        }
+
+        .team-member .content {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            color: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .team-member:hover .content {
+            bottom: 0;
+        }
+
+        .team-member .role {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.1s;
+        }
+
+        .team-member:hover .role {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .team-member .bio {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .team-member:hover .bio {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .team-member:hover .social-links {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links {
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+        }
+
+        .social-links .social-email:hover {
+            background: #43a047;
+            color: white;
+            transform: translateY(-3px) rotate(15deg);
+            box-shadow: 0 5px 15px rgba(67, 160, 71, 0.4);
+        }
+
+        .social-links .social-instagram:hover {
+            background: #E4405F;
+            color: white;
+            transform: translateY(-3px) rotate(-15deg);
+            box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
+        }
+
+        [data-theme='dark'] .social-links a:hover {
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .experience-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #43a047;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .team-member:hover .experience-badge {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .animated-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        [data-theme='dark'] .feature-card {
+            background: rgba(30, 30, 30, 0.8);
+        }
+
+        [data-theme='dark'] .about-hero {
+            background: linear-gradient(135deg, rgba(67, 160, 71, 0.05) 0%, rgba(229, 57, 53, 0.05) 100%);
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .team-member {
+                margin-bottom: 2rem;
+            }
+
+            .team-member .overlay {
+                opacity: 1;
+                visibility: visible;
+                background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+                transform: translateY(0);
+                position: relative;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .team-member .member-info {
+                position: relative;
+                padding: 1rem;
+                transform: translateY(0);
+            }
+
+            .team-member .social-links {
+                position: relative;
+                bottom: 0;
+                margin-top: 1rem;
+            }
+
+            .team-member:hover .overlay,
+            .team-member:hover .member-info,
+            .team-member:hover .social-links {
+                transform: translateY(0);
+            }
+
+            .core-values .value-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .core-values .value-card:hover {
+                transform: none;
+            }
+
+            .statistics-counter {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Team member card styles */
+        .team-member {
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Info overlay styles */
+        .team-member .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+
+        /* Hover effects for desktop */
+        @media (hover: hover) {
+            .team-member:hover {
+                transform: translateY(-10px);
+            }
+
+            .team-member:hover .member-info {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .team-member:hover .social-links a {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Touch effects for mobile */
+        @media (hover: none) {
+            .team-member.touch-active {
+                transform: translateY(-10px);
+            }
+
+            .team-member.touch-active .member-info {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .team-member.touch-active .social-links a {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Show basic info by default on mobile */
+            .team-member .member-name,
+            .team-member .member-title {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 0.5rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+
+            .team-member.touch-active .member-name,
+            .team-member.touch-active .member-title {
+                opacity: 0;
+            }
+        }
+
+        /* Social links animation */
+        .social-links a {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        /* Make sure buttons are large enough for touch targets */
+        .social-links a {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/image/logo.png" alt="Subhalaxmi Logo" style="height: 40px; margin-right: 10px;">
+                <div>
+                    <span style="font-family: 'Dancing Script', cursive; font-size: 2rem; margin-right: 0.3em;">Subhalaxmi</span>
+                    <span style="font-weight: bold; font-size: 1.2rem;">Teleservice</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-phone"></i> Products</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3" type="button" aria-label="Toggle dark mode">
+                    <i class="bi bi-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="about-hero py-5 position-relative">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Our Story</h1>
+                    <p class="lead mb-4">Welcome to Subhalaxmi Teleservice, where technology meets trust. Since 2013, we've been your dedicated partner in the world of mobile technology, providing not just products, but creating lasting connections.</p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="stat-card text-center" data-aos="zoom-in">
+                                <div class="animated-number" data-value="12">0</div>
+                                <p class="mb-0">Years of Excellence</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card text-center" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="animated-number" data-value="7000">0</div>
+                                <p class="mb-0">Happy Customers</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card text-center" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="animated-number" data-value="10000">0</div>
+                                <p class="mb-0">Phones Sold</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="p-4">
+                        <img src="assets/image/logo.png" alt="About Us" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Our Core Values</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="flip-left">
+                    <div class="feature-card h-100 p-4">
+                        <div class="value-icon mb-4">
+                            <i class="bi bi-heart-fill text-danger fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Customer First</h4>
+                        <p class="text-center mb-0">Your satisfaction is our top priority. We go above and beyond to ensure you have the best experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="feature-card h-100 p-4">
+                        <div class="value-icon mb-4">
+                            <i class="bi bi-shield-check text-success fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Quality Assured</h4>
+                        <p class="text-center mb-0">We only deal in genuine products, ensuring you get the best value for your money.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="feature-card h-100 p-4">
+                        <div class="value-icon mb-4">
+                            <i class="bi bi-lightbulb text-warning fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Innovation</h4>
+                        <p class="text-center mb-0">Staying ahead with the latest technology and providing cutting-edge solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Meet Our Team</h2>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="team-member">
+                        <div class="p-4">
+                            <svg class="team-avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Background Circle -->
+                                <circle cx="100" cy="100" r="95" fill="#43a047" />
+                                <!-- Head -->
+                                <circle cx="100" cy="85" r="40" fill="#fff" />
+                                <!-- Body -->
+                                <path d="M100,135 L100,190 Q100,195 95,195 L45,195 Q40,195 40,190 L40,155 Q40,135 60,135 L140,135 Q160,135 160,155 L160,190 Q160,195 155,195 L105,195 Q100,195 100,190 Z" fill="#fff" />
+                                <!-- Tie -->
+                                <path d="M90,135 L110,135 L105,190 L95,190 Z" fill="#43a047" />
+                                <!-- Glasses -->
+                                <path d="M70,80 L85,80 M115,80 L130,80" stroke="#43a047" stroke-width="3"/>
+                                <circle cx="60" cy="80" r="10" fill="none" stroke="#43a047" stroke-width="3"/>
+                                <circle cx="140" cy="80" r="10" fill="none" stroke="#43a047" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <span class="experience-badge">12+ Years Experience</span>
+                        <div class="content">
+                            <h4 class="mb-2">Rajesh Kumar</h4>
+                            <p class="role">Founder & CEO</p>
+                            <p class="bio">A visionary leader with over 12 years of experience in mobile retail. Passionate about bringing the latest technology to customers.</p>
+                            <div class="social-links">
+                                <a href="mailto:rajesh@subhalaxmi.com" aria-label="Email" class="social-email">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                <a href="https://instagram.com/subhalaxmi" target="_blank" aria-label="Instagram" class="social-instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <div class="p-4">
+                            <svg class="team-avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Background Circle -->
+                                <circle cx="100" cy="100" r="95" fill="#e53935" />
+                                <!-- Head -->
+                                <circle cx="100" cy="85" r="40" fill="#fff" />
+                                <!-- Hair -->
+                                <path d="M60,85 Q100,20 140,85" fill="#333" />
+                                <!-- Body -->
+                                <path d="M100,135 L100,190 Q100,195 95,195 L45,195 Q40,195 40,190 L40,155 Q40,135 60,135 L140,135 Q160,135 160,155 L160,190 Q160,195 155,195 L105,195 Q100,195 100,190 Z" fill="#fff" />
+                                <!-- Necklace -->
+                                <path d="M85,140 Q100,150 115,140" stroke="#e53935" stroke-width="3" fill="none"/>
+                                <!-- Smile -->
+                                <path d="M85,95 Q100,105 115,95" stroke="#333" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        <span class="experience-badge">8+ Years Experience</span>
+                        <div class="content">
+                            <h4 class="mb-2">Priya Singh</h4>
+                            <p class="role">Customer Relations Manager</p>
+                            <p class="bio">Dedicated to ensuring exceptional customer experiences. Expert in building lasting relationships with clients.</p>
+                            <div class="social-links">
+                                <a href="mailto:priya@subhalaxmi.com" aria-label="Email" class="social-email">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                <a href="https://instagram.com/subhalaxmi" target="_blank" aria-label="Instagram" class="social-instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <div class="p-4">
+                            <svg class="team-avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Background Circle -->
+                                <circle cx="100" cy="100" r="95" fill="#1976d2" />
+                                <!-- Head -->
+                                <circle cx="100" cy="85" r="40" fill="#fff" />
+                                <!-- Body -->
+                                <path d="M100,135 L100,190 Q100,195 95,195 L45,195 Q40,195 40,190 L40,155 Q40,135 60,135 L140,135 Q160,135 160,155 L160,190 Q160,195 155,195 L105,195 Q100,195 100,190 Z" fill="#fff" />
+                                <!-- Tech Symbol -->
+                                <path d="M85,140 L115,140 L115,160 L85,160 Z" fill="#1976d2" />
+                                <circle cx="100" cy="150" r="5" fill="#fff" />
+                                <!-- Smart Glasses -->
+                                <path d="M65,75 L135,75" stroke="#1976d2" stroke-width="3"/>
+                                <rect x="70" y="70" width="20" height="10" rx="2" fill="#1976d2"/>
+                                <rect x="110" y="70" width="20" height="10" rx="2" fill="#1976d2"/>
+                            </svg>
+                        </div>
+                        <span class="experience-badge">10+ Years Experience</span>
+                        <div class="content">
+                            <h4 class="mb-2">Amit Patel</h4>
+                            <p class="role">Technical Expert</p>
+                            <p class="bio">Mobile technology specialist with deep knowledge of latest smartphones. Provides expert guidance on tech solutions.</p>
+                            <div class="social-links">
+                                <a href="mailto:amit@subhalaxmi.com" aria-label="Email" class="social-email">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                <a href="https://instagram.com/subhalaxmi" target="_blank" aria-label="Instagram" class="social-instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Why Choose Us</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="feature-card text-center p-4">
+                        <i class="bi bi-shield-check text-success fs-1 mb-3"></i>
+                        <h4>Genuine Products</h4>
+                        <p class="mb-0">100% authentic products with manufacturer warranty</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center p-4">
+                        <i class="bi bi-currency-rupee text-success fs-1 mb-3"></i>
+                        <h4>Best Prices</h4>
+                        <p class="mb-0">Competitive prices and exciting offers</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center p-4">
+                        <i class="bi bi-headset text-success fs-1 mb-3"></i>
+                        <h4>Expert Support</h4>
+                        <p class="mb-0">Dedicated team for all your queries</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card text-center p-4">
+                        <i class="bi bi-arrow-repeat text-success fs-1 mb-3"></i>
+                        <h4>Easy Returns</h4>
+                        <p class="mb-0">Hassle-free return and exchange policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Chat and Scroll-to-Top -->
+    <div id="whatsapp-chat" class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success rounded-circle shadow" style="width: 60px; height: 60px;">
+            <i class="bi bi-whatsapp fs-3"></i>
+        </a>
+    </div>
+    <div id="scroll-to-top" class="position-fixed bottom-0 end-0 m-3" style="display: none;">
+        <button class="btn btn-primary rounded-circle shadow" style="width: 60px; height: 60px;">
+            <i class="bi bi-arrow-up fs-3"></i>
+        </button>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Subhalaxmi Teleservice. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="#" class="me-3" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="me-3" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="me-3" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Animated numbers
+        const animateNumber = (element) => {
+            const target = parseInt(element.dataset.value);
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const stepTime = 20; // Update every 20ms
+            const steps = duration / stepTime;
+            const increment = target / steps;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + (target > 100 ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.round(current).toLocaleString() + (target > 100 ? '+' : '');
+                }
+            }, stepTime);
+        };
+
+        // Start animation when elements come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumber(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        document.querySelectorAll('.animated-number').forEach(number => {
+            observer.observe(number);
+        });
+
+        // Add touch support for team member cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamCards = document.querySelectorAll('.team-member');
+            
+            // Function to handle touch events
+            function handleTouch(card) {
+                // Remove active class from all cards
+                teamCards.forEach(c => c.classList.remove('touch-active'));
+                // Add active class to touched card
+                card.classList.add('touch-active');
+            }
+
+            // Add touch event listeners to each card
+            teamCards.forEach(card => {
+                card.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    handleTouch(this);
+                });
+            });
+
+            // Remove active class when touching outside
+            document.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.team-member')) {
+                    teamCards.forEach(card => card.classList.remove('touch-active'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
