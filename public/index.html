@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhalaxmi Teleservice - Home</title>
+    <link rel="icon" type="image/x-icon" href="assets/image/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/image/logo.png" alt="Subhalaxmi Logo" style="height: 40px; margin-right: 10px;">
+                <div>
+                    <span style="font-family: 'Dancing Script', cursive; font-size: 2rem; margin-right: 0.3em;">Subhalaxmi</span>
+                    <span style="font-weight: bold; font-size: 1.2rem;">Teleservice</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-phone"></i> Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3" type="button" aria-label="Toggle dark mode">
+                    <i class="bi bi-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="py-5 text-center bg-light position-relative overflow-hidden hero-section">
+        <div class="container position-relative z-2">
+            <h1 class="display-4 fw-bold mb-2">
+                <span class="subhalaxmi-hero" style="font-family: 'Dancing Script', cursive; color: #e53935; font-weight: bold; position: relative;">Subhalaxmi
+                    <span class="neon-glow"></span>
+                </span>
+            </h1>
+            <h2 class="mb-3" style="letter-spacing: 1.2em; font-size: 2rem; font-weight: bold;">
+              T E L E S E R V I C E
+            </h2>
+            <p class="lead">MULTI BRAND MOBILE SHOP</p>
+            <a href="products.html" class="btn btn-success btn-lg mt-3">
+                <i class="bi bi-arrow-right-circle"></i> Explore Phones
+            </a>
+        </div>
+        <!-- Animated Waves -->
+        <div class="waves-container position-absolute bottom-0 start-0 w-100 z-1">
+            <svg class="wave wave1" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,60 C360,120 1080,0 1440,60" stroke="#43a047" stroke-width="4"/></svg>
+            <svg class="wave wave2" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C480,40 960,160 1440,80" stroke="#e53935" stroke-width="4"/></svg>
+            <svg class="wave wave3" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,100 C600,180 840,0 1440,100" stroke="#007bff" stroke-width="4"/></svg>
+            <svg class="wave wave4" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,90 C400,60 1040,180 1440,90" stroke="#ffb300" stroke-width="4"/></svg>
+            <svg class="wave wave5" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,110 C700,40 1240,200 1440,110" stroke="#8e24aa" stroke-width="4"/></svg>
+        </div>
+    </section>
+    <!-- Featured Phones -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center section-heading" style="font-family: 'Dancing Script', cursive; font-weight: bold;">Featured Phones</h2>
+            <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators for manual navigation -->
+                <div class="carousel-indicators">
+                    <!-- Will be populated dynamically -->
+                </div>
+                
+                <!-- Featured phones container -->
+                <div class="carousel-inner" id="featured-phones">
+                    <!-- Featured phones will be dynamically loaded here -->
+                </div>
+                
+                <!-- Manual navigation controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <!-- Pause/Play control -->
+            <div class="text-center mt-3">
+                <button id="carouselControl" class="btn btn-outline-primary">
+                    <i class="bi bi-pause-fill"></i> Pause
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="py-5 why-choose-us-section">
+        <div class="container">
+            <h2 class="mb-4 text-center section-heading" style="font-family: 'Dancing Script', cursive; font-weight: bold;">Why Choose Us</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="choose-card glass-card p-4 h-100">
+                        <div class="choose-icon mb-3">
+                            <lord-icon src="https://cdn.lordicon.com/egmlnyku.json" trigger="loop" colors="primary:#43a047,secondary:#e53935" style="width:60px;height:60px"></lord-icon>
+                        </div>
+                        <h5>Trusted Service</h5>
+                        <p>Years of experience and thousands of happy customers.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="choose-card glass-card p-4 h-100">
+                        <div class="choose-icon mb-3">
+                            <lord-icon src="https://cdn.lordicon.com/ssvybplt.json" trigger="loop" colors="primary:#43a047,secondary:#e53935" style="width:60px;height:60px"></lord-icon>
+                        </div>
+                        <h5>Best Prices</h5>
+                        <p>Competitive pricing on all the latest smartphones.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="choose-card glass-card p-4 h-100">
+                        <div class="choose-icon mb-3">
+                            <lord-icon src="https://cdn.lordicon.com/hjeefwhm.json" trigger="loop" colors="primary:#43a047,secondary:#e53935" style="width:60px;height:60px"></lord-icon>
+                        </div>
+                        <h5>After-Sales Support</h5>
+                        <p>We care for you even after your purchase is complete.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="choose-card glass-card p-4 h-100 position-relative overflow-hidden">
+                        <div class="choose-icon mb-3 position-relative" style="height:60px;">
+                            <svg class="truck-road-svg" width="100%" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;z-index:0;">
+                                <rect y="40" width="120" height="6" rx="3" fill="#bdbdbd" opacity="0.4"/>
+                            </svg>
+                            <div class="truck-anim-wrapper">
+                                <svg class="truck-svg" width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="5" y="15" width="30" height="15" rx="3" fill="#43a047"/>
+                                    <rect x="35" y="20" width="15" height="10" rx="2" fill="#e53935"/>
+                                    <circle cx="15" cy="33" r="4" fill="#333"/>
+                                    <circle cx="45" cy="33" r="4" fill="#333"/>
+                                    <rect x="38" y="23" width="5" height="4" rx="1" fill="#fff"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h5>Speed Delivery</h5>
+                        <p>Fast and reliable delivery to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Success Story -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center section-heading" style="font-family: 'Dancing Script', cursive; font-weight: bold;">Our Success Story</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="bi bi-phone-fill fs-1 text-success"></i>
+                        <h3 class="display-4 animated-number" data-target="10000">0</h3>
+                        <p>Phones Sold</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="bi bi-emoji-smile-fill fs-1 text-success"></i>
+                        <h3 class="display-4 animated-number" data-target="7000">0</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="bi bi-star-fill fs-1 text-success"></i>
+                        <h3 class="display-4 animated-number" data-target="4.8">0</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <i class="bi bi-calendar-check-fill fs-1 text-success"></i>
+                        <h3 class="display-4 animated-number" data-target="12">0</h3>
+                        <p>Years of Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Subhalaxmi Teleservice. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="#" class="me-3" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="me-3" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="me-3" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Chat and Scroll-to-Top -->
+    <div id="whatsapp-chat" class="position-fixed bottom-0 end-0 mb-5 me-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success rounded-circle shadow whatsapp-icon" style="width: 60px; height: 60px;">
+            <i class="bi bi-whatsapp fs-3"></i>
+        </a>
+    </div>
+    <div id="scroll-to-top" class="position-fixed bottom-0 end-0 m-3" style="display: none;">
+        <button class="btn btn-primary rounded-circle shadow" style="width: 60px; height: 60px;">
+            <i class="bi bi-arrow-up fs-3"></i>
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script>
+        // Fetch smartphones from Google Web App backend
+        fetch('https://script.google.com/macros/s/AKfycbyHsgLM26nvSEsg3GpuVj76l_MC01HYnnYXDS-jTyWWqEAbznUJ5B5epSzwcFJoXz7k/exec')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('smartphones-list');
+                if (Array.isArray(data)) {
+                    data.forEach(phone => {
+                        const col = document.createElement('div');
+                        col.className = 'col-md-4';
+                        col.innerHTML = `
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">${phone.name || 'Unknown Model'}</h5>
+                                    <p class="card-text">Brand: ${phone.brand || 'N/A'}</p>
+                                    <p class="card-text">Price: ${phone.price || 'N/A'}</p>
+                                </div>
+                            </div>
+                        `;
+                        list.appendChild(col);
+                    });
+                } else {
+                    list.innerHTML = '<p>No smartphones found.</p>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('smartphones-list').innerHTML = '<p class="text-danger">Failed to load smartphones.</p>';
+            });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animated number counters
+        document.querySelectorAll('.animated-number').forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                const inc = target / 200;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+    </script>
+</body>
+</html>
